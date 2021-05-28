@@ -1,9 +1,10 @@
 FROM python:3.9
 
+ENV TZ=Asia/Shanghai
+
 WORKDIR /usr/src/app
 COPY requirements.txt ./
-RUN pip install pip -U \
-    & pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple \
+RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U \
     & pip install -r requirements.txt
 COPY . .
 

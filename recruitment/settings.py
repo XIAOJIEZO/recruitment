@@ -74,13 +74,25 @@ WSGI_APPLICATION = 'recruitment.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default':
+    {
+        'ENGINE': 'django.db.backends.mysql',    # 数据库引擎
+        'NAME': 'jobs',                        # 数据库名称
+        'HOST': '127.0.0.1',                     # 数据库地址，本机 ip 地址 127.0.0.1
+        'PORT': 3306,                            # 端口
+        'USER': 'root',                          # 数据库用户名
+        'PASSWORD': '123456',                    # 数据库密码
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
